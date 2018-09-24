@@ -12,9 +12,14 @@ namespace app
         {
             int[] szamok = new int[10];
             int max, min,db;
+            
         
             Console.WriteLine("Hány darab számot írsz be?");
-            db = Convert.ToInt32(Console.ReadLine());
+            //db = Convert.ToInt32(Console.ReadLine());
+            if (!int.TryParse(Console.ReadLine(), out db))
+            {
+                Console.WriteLine("Nem számot adtál meg!");
+            }
             Console.WriteLine("Kérek"+ " "+db+" " +"db számot!");
 
             max = szamok[0];
@@ -38,8 +43,6 @@ namespace app
             }
             Console.WriteLine("Legkisebb szám: " + min);
             
-
-
             Console.ReadKey();
         }
     }
